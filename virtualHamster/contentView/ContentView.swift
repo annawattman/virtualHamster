@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var vm = ViewModel()
+    private let timer = Timer.publish(every: 15, on: .main, in: .common)
+    
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")

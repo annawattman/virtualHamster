@@ -147,10 +147,10 @@
 		90C85E4F298295DE00422A3E /* contentView */ = {
 			isa = PBXGroup;
 			children = (
+				90C85E24297E9BBA00422A3E /* ContentView.swift */,
 				90C85E50298295F700422A3E /* viewModel */,
 				90C85E512982960D00422A3E /* Model */,
 				90C85E522982961300422A3E /* Data */,
-				90C85E24297E9BBA00422A3E /* ContentView.swift */,
 			);
 			path = contentView;
 			sourceTree = "<group>";
