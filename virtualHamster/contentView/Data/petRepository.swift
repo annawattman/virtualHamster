@@ -8,7 +8,6 @@
 import Foundation
 
 //Ladda och spara information
-
 class petRepository {
     private var PET_KEY = "PET_KEY"
     private var pet: Pet
@@ -22,7 +21,7 @@ class petRepository {
                 return
             }
         }
-        self.pet = Pet(name: "Tommy", lastMeal: Date(), lastDrink: Date(), lastPlayed: Date(), lastWalk: Date(), lastShower: Date())
+        self.pet = Pet(name: "Tommy", birthday: Date(), lastMeal: Date(), lastDrink: Date(), lastPlayed: Date(), lastShower: Date())
     }
     
     func loadData() -> Pet {
@@ -30,7 +29,7 @@ class petRepository {
     }
     
     
-    //Koppla till databasen 
+    //Koppla till databasen
     func saveData(pet: Pet) {
         if let encoded = try? JSONEncoder().encode(pet) {
             UserDefaults.standard.set(encoded, forKey: PET_KEY)
