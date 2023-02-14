@@ -56,7 +56,7 @@ import SwiftUI
 extension ContentView {
     class ViewModel: ObservableObject {
         @Published var pet : Pet
-        @Published var actions = ["Feed", "Give water", "Play", "Shower"]
+        @Published var actions = ["Feed", "Give water", "Play", "Sleep"]
         private var repository = petRepository()
         
         init() {
@@ -83,8 +83,8 @@ extension ContentView {
             saveData()
         }
         
-        func showerTime() {
-            pet.lastShower = Date()
+        func sleepTime() {
+            pet.lastSlept = Date()
             saveData()
         }
         

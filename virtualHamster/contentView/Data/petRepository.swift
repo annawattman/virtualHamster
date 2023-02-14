@@ -21,7 +21,7 @@ class petRepository {
                 return
             }
         }
-        self.pet = Pet(name: "Tommy", birthday: Date(), lastMeal: Date(), lastDrink: Date(), lastPlayed: Date(), lastShower: Date())
+        self.pet = Pet(name: "Tommy", birthday: Date(), lastMeal: Date(), lastDrink: Date(), lastPlayed: Date(), lastSlept: Date())
     }
     
     func loadData() -> Pet {
