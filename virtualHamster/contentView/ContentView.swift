@@ -33,7 +33,9 @@ struct ContentView: View {
                         .frame(width: 70, height: 30)
                         .centerH()
                     Text("Age: **\(vm.pet.age)**")
-                    Image(vm.pet.happinessLevel.0 == "Happy" ? "hamsterhappy" : "hamstersad")
+                    Image(vm.pet.happinessLevel.0 == "Happy" ? "hamsterhappy" :
+                          vm.pet.happinessLevel.0 == "Sleepy" ? "hamstersleepy" :
+                          "hamstersad")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)

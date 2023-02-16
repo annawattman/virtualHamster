@@ -11,6 +11,8 @@ import Foundation
 class petRepository {
     private var PET_KEY = "PET_KEY"
     private var pet: Pet
+   
+
     
     init() {
         //Kollar om det finns data
