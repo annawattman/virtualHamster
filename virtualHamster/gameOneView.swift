@@ -106,7 +106,7 @@ struct gameOneView: View {
                         }
                 }
             }
-            .frame(width: 200, height: 200)
+            .frame(width: 100, height: 100)
             .padding(.bottom, 50)
         }
         .onAppear(perform: startGame)

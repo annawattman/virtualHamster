@@ -15,6 +15,8 @@ struct Pet: Codable {
     var lastDrink: Date
     var lastPlayed: Date
     var lastSlept: Date
+    // lägg till points
+    
     
     var age: Int {
         let timeSince = calculateTimeSince(data: birthday)
@@ -29,9 +31,11 @@ struct Pet: Codable {
         let playTime = self.playTime
         let sleepTime = self.sleepTime
         
-        if hunger.0 == "Hungry" || thirst.0 == "Thirsty" || playTime.0 == "PlayTime" || sleepTime.0 == "SleepTime" {
+        if hunger.0 == "Hungry" || thirst.0 == "Thirsty" || playTime.0 == "PlayTime" {
             return ("Unhappy", .red)
-        } else {
+            
+        }
+        else {
             return ("Happy", .green)
         }
     }

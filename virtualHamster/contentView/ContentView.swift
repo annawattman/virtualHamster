@@ -4,7 +4,6 @@
 //
 //  Created by Anna Wattman on 2023-01-23.
 //
-
 import SwiftUI
 import Swift
 
@@ -33,9 +32,7 @@ struct ContentView: View {
                         .frame(width: 70, height: 30)
                         .centerH()
                     Text("Age: **\(vm.pet.age)**")
-                    Image(vm.pet.happinessLevel.0 == "Happy" ? "hamsterhappy" :
-                          vm.pet.happinessLevel.0 == "Sleepy" ? "hamstersleepy" :
-                          "hamstersad")
+                    Image(vm.pet.happinessLevel.0 == "Happy" ? "hamsterhappy" : "hamstersad")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
@@ -80,9 +77,12 @@ struct ContentView: View {
                             .padding([.trailing], 10)
                             
                             
-                            Button(vm.actions[3]) {
-                                self.vm.sleepTime()
-                            }
+                            Button(action: { self.vm.sleepTime()
+                            }, label: {
+                                NavigationLink(destination: SleepTimeView()) {
+                                    Text(vm.actions[3])
+                                }
+                            })
                             .foregroundColor(Color.white)
                             .frame(width: 70, height: 50)
                             .padding()
@@ -105,4 +105,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 

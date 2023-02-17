@@ -84,6 +84,7 @@ extension ContentView {
         }
         
         func sleepTime() {
+          //  showSleepingTimer = true
             pet.lastSlept = Date()
             saveData()
             
