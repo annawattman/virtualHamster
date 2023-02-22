@@ -7,11 +7,17 @@
 
 import SwiftUI
 struct SleepTimeView: View {
+    
     @State var remainingTime = 30
     @State var timer: Timer?
     @State var isTimeUp = false
     @State var showPoints = false
     @State var navigateBack = false
+    @EnvironmentObject var vm : ViewModel
+    @State private var score = 0
+    @Environment(\.presentationMode) var presentation
+  //  @State var points: Int
+    
     
     var body: some View {
         NavigationView {
@@ -22,6 +28,7 @@ struct SleepTimeView: View {
                         .scaledToFit()
                         .frame(width: 200, height: 200)
                         .centerH()
+                    
                 }
                 
                 if !isTimeUp {
@@ -34,18 +41,22 @@ struct SleepTimeView: View {
                     if !showPoints {
                         Button("Collect Points") {
                             showPoints = true
+                          //  points += 10
                         }
                         .buttonStyle(GreenButtonStyle())
                         .padding()
+                   
                     } else {
                         Text("+10 points")
                             .font(.title)
                             .foregroundColor(.green)
                             .padding()
-                        Button(action: {}, label: {
-                            NavigationLink(destination: ContentView()) {
+                        Button(action: {
+                            vm.pet.points += 10
+                            self.presentation.wrappedValue.dismiss()
+                        }, label: {
                                 Text("Go back")
-                            }
+                               
                         })
                         /*
                         NavigationLink(

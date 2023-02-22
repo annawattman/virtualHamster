@@ -23,7 +23,7 @@ class petRepository {
                 return
             }
         }
-        self.pet = Pet(name: "Tommy", birthday: Date(), lastMeal: Date(), lastDrink: Date(), lastPlayed: Date(), lastSlept: Date())
+        self.pet = Pet(name: "Tommy", birthday: Date(), lastMeal: Date(), lastDrink: Date(), lastPlayed: Date(), lastSlept: Date(), points: 0)
     }
     
     func loadData() -> Pet {

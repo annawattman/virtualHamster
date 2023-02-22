@@ -16,6 +16,7 @@ struct Pet: Codable {
     var lastPlayed: Date
     var lastSlept: Date
     // lägg till points
+    var points: Int
     
     
     var age: Int {
@@ -111,7 +112,8 @@ struct Pet: Codable {
             let timeSince = calculateTimeSince(data: lastSlept)
             var string = ""
             var color: Color = .white
-
+            
+/*
             switch timeSince {
             case 0..<30:
                 string = "Wide awake"
@@ -126,7 +128,7 @@ struct Pet: Codable {
                 string = "Unknown"
                 color = .white
             }
-
+*/
             return (string, color)
         }
     
