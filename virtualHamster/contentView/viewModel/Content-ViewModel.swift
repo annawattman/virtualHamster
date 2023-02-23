@@ -37,6 +37,7 @@ import SwiftUI
         
         func playTime() {
             pet.lastPlayed = Date()
+            
             saveData()
         }
         
@@ -45,7 +46,6 @@ import SwiftUI
             pet.lastSlept = Date()
             pet.points += 10
             saveData()
-            
             
         }
     }

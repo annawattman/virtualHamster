@@ -31,6 +31,7 @@ struct gameTwoView: View {
     var body: some View {
         VStack {
             Button(action: {
+            
                 print("Button tapped")
                 print("point before: \(vm.pet.points)")
                 vm.pet.points += score
@@ -48,17 +49,9 @@ struct gameTwoView: View {
             .padding(.leading, 20)
             .padding(.top, 10)
             .navigationBarBackButtonHidden(true)
-            /*
-            Text("Player: \(playerSelection?.rawValue ?? "")")
-                .font(.largeTitle)
-            
-            Spacer()
-            
-            Text("Computer: \(computerSelection?.rawValue ?? "")")
-                .font(.largeTitle)
-            */
+          
             HStack {
-                Text("Player:")
+                Text("You:")
                     .font(.largeTitle)
                 playerSelection?.image
                     .resizable()
@@ -70,7 +63,7 @@ struct gameTwoView: View {
             Spacer()
 
             HStack {
-                Text("Computer:")
+                Text("\(vm.pet.name):")
                     .font(.largeTitle)
                 computerSelection?.image
                     .resizable()
@@ -106,17 +99,23 @@ struct gameTwoView: View {
     }
     
     func startGame(option: GameOption) {
-        playerSelection = option
-        computerSelection = GameOption.allCases.randomElement()
-        
-        switch (playerSelection, computerSelection) {
-        case (.rock, .scissor), (.paper, .rock), (.scissor, .paper):
-            resultMessage = "You win!"
-            score += 1 // Increase player's score by 1 when they win
-        case (.rock, .rock), (.paper, .paper), (.scissor, .scissor):
-            resultMessage = "It's a draw."
-        default:
-            resultMessage = "You lose."
+        if score >= 10 {
+            resultMessage = "Good job! You got +10 points. Try again soon!"
+        }
+            
+        else {
+            playerSelection = option
+            computerSelection = GameOption.allCases.randomElement()
+            
+            switch (playerSelection, computerSelection) {
+            case (.rock, .scissor), (.paper, .rock), (.scissor, .paper):
+                resultMessage = "You win!"
+                score += 1 // Increase player's score by 1 when they win
+            case (.rock, .rock), (.paper, .paper), (.scissor, .scissor):
+                resultMessage = "It's a draw."
+            default:
+                resultMessage = "You lose."
+            }
         }
     }
 }

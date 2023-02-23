@@ -4,7 +4,6 @@
 //
 //  Created by Anna Wattman on 2023-01-26.
 //
-
 import Foundation
 import SwiftUI
 
@@ -147,4 +146,3 @@ struct Pet: Codable {
         }
     }
 }
-

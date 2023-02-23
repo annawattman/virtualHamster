@@ -29,6 +29,7 @@ struct playTimeView: View {
                     .cornerRadius(10)
                     .padding(.leading, 20)
                     .padding(.top, 5)
+                    
                     .navigationBarBackButtonHidden(true)
                     
                     
@@ -51,8 +52,10 @@ struct playTimeView: View {
                     HStack {
                         Button(action: {}, label: {
                             NavigationLink(destination: gameOneView()) {
-                                Text("Game one")
+                                Text("Catch the hamster")
+                                
                             }
+                            .font(.custom("Arial", fixedSize: 14))
                         })
                         .foregroundColor(Color.white)
                         .frame(width: 70, height: 50)
@@ -61,10 +64,12 @@ struct playTimeView: View {
                         .padding([.trailing], 10)
                         
                         
+                        
                         Button(action: {}, label: {
                             NavigationLink(destination: gameTwoView()) {
-                                Text("Game two")
+                                Text("Rock, paper, scissors")
                             }
+                            .font(.custom("Arial", fixedSize: 14))
                         })
                         
                         .foregroundColor(Color.white)

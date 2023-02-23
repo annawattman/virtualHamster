@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/* Jag använder mig av UserDefaults som databas. UserDefaults är en databas som finns tillgänglig på alla Apple-plattformar och används för att spara inställningar och annan enkel data på enheten. Det är en lämplig databas för att lagra små mängder data som inte behöver delas mellan flera enheter eller användare. I detta fall används det för att lagra information om hamstern, såsom dess namn, födelsedag och senaste måltid, spelad tid och sovtid. */
 //Ladda och spara information
 class petRepository {
     private var PET_KEY = "PET_KEY"
