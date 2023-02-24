@@ -27,11 +27,11 @@ struct gameTwoView: View {
     @EnvironmentObject var vm : ViewModel
     @State private var score = 0
     @Environment(\.presentationMode) var presentation
-
+    
     var body: some View {
         VStack {
             Button(action: {
-            
+                
                 print("Button tapped")
                 print("point before: \(vm.pet.points)")
                 vm.pet.points += score
@@ -49,7 +49,7 @@ struct gameTwoView: View {
             .padding(.leading, 20)
             .padding(.top, 10)
             .navigationBarBackButtonHidden(true)
-          
+            
             HStack {
                 Text("You:")
                     .font(.largeTitle)
@@ -59,9 +59,9 @@ struct gameTwoView: View {
                     .frame(width: 50, height: 50)
             }
             .padding()
-
+            
             Spacer()
-
+            
             HStack {
                 Text("\(vm.pet.name):")
                     .font(.largeTitle)
@@ -102,7 +102,7 @@ struct gameTwoView: View {
         if score >= 10 {
             resultMessage = "Good job! You got +10 points. Try again soon!"
         }
-            
+        
         else {
             playerSelection = option
             computerSelection = GameOption.allCases.randomElement()

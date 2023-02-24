@@ -16,7 +16,6 @@ struct SleepTimeView: View {
     @EnvironmentObject var vm : ViewModel
     @State private var score = 0
     @Environment(\.presentationMode) var presentation
-  //  @State var points: Int
     
     
     var body: some View {
@@ -41,11 +40,11 @@ struct SleepTimeView: View {
                     if !showPoints {
                         Button("Collect Points") {
                             showPoints = true
-                          //  points += 10
+                            //  points += 10
                         }
                         .buttonStyle(GreenButtonStyle())
                         .padding()
-                   
+                        
                     } else {
                         Text("+10 points")
                             .font(.title)
@@ -55,18 +54,18 @@ struct SleepTimeView: View {
                             vm.pet.points += 10
                             self.presentation.wrappedValue.dismiss()
                         }, label: {
-                                Text("Go back")
-                               
+                            Text("Go back")
+                            
                         })
                         /*
-                        NavigationLink(
-                            destination: ContentView(),
-                            isActive: $navigateBack) {
-                            Button("Go Back") {
-                                navigateBack = true
-                            }*/
-                            .buttonStyle(GreenButtonStyle())
-                            .padding()
+                         NavigationLink(
+                         destination: ContentView(),
+                         isActive: $navigateBack) {
+                         Button("Go Back") {
+                         navigateBack = true
+                         }*/
+                        .buttonStyle(GreenButtonStyle())
+                        .padding()
                         
                     }
                 }

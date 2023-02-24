@@ -14,7 +14,6 @@ struct Pet: Codable {
     var lastDrink: Date
     var lastPlayed: Date
     var lastSlept: Date
-    // lägg till points
     var points: Int
     
     
@@ -23,13 +22,13 @@ struct Pet: Codable {
         return timeSince
     }
     
-
+    
     
     var happinessLevel: (String, Color) {
         let hunger = self.hunger
         let thirst = self.thirst
         let playTime = self.playTime
-        let sleepTime = self.sleepTime
+        // let sleepTime = self.sleepTime
         
         if hunger.0 == "Hungry" || thirst.0 == "Thirsty" || playTime.0 == "PlayTime" {
             return ("Unhappy", .red)
@@ -88,7 +87,7 @@ struct Pet: Codable {
         let timeSince = calculateTimeSince(data: lastPlayed)
         var string = ""
         var color : Color = .green
-
+        
         switch timeSince {
         case 0..<30:
             string = "Satiated"
@@ -105,31 +104,15 @@ struct Pet: Codable {
         }
         return (string, color)
     }
-
-
-        var sleepTime: (String, Color) {
-            let timeSince = calculateTimeSince(data: lastSlept)
-            var string = ""
-            var color: Color = .white
-            
-/*
-            switch timeSince {
-            case 0..<30:
-                string = "Wide awake"
-                color = .green
-            case 30..<60:
-                string = "A bit tired"
-                color = .yellow
-            case 60...:
-                string = "Sleepy"
-                color = .red
-            default:
-                string = "Unknown"
-                color = .white
-            }
-*/
-            return (string, color)
-        }
+    
+    
+    var sleepTime: (String, Color) {
+        let timeSince = calculateTimeSince(data: lastSlept)
+        var string = ""
+        var color: Color = .white
+        
+        return (string, color)
+    }
     
     func isActionNeeded(for action: String) -> Bool {
         switch action {
